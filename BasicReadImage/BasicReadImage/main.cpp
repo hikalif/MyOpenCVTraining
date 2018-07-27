@@ -16,6 +16,7 @@
 using namespace cv;
 using namespace std;
 
+
 int main(int argc, const char * argv[]) {
     
     Mat image;
@@ -31,7 +32,10 @@ int main(int argc, const char * argv[]) {
         return -1;
     }
     
+    //create a window to show image
     namedWindow("image", WINDOW_AUTOSIZE);
+    
+    //show image in the namedWindow
     imshow("image", image);
     
     waitKey(0);
