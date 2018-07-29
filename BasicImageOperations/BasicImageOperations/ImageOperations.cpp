@@ -41,3 +41,20 @@ void ImageOperations::ShowImage(const std::string windowNmae, cv::Mat image) {
 void ImageOperations::SaveImage(const std::string savedImageName, cv::Mat image) {
     imwrite(savedImageName, image);
 }
+
+void ImageOperations::GetGrayImage(Mat &grayImage) {
+    cvtColor(sourceImage, grayImage, COLOR_RGB2GRAY);
+}
+
+void ImageOperations::GetRotatedImage(cv::Mat &rotatedImage, cv::Point2f center, double rotationAngle, double scale, Size size) {
+    Mat M = getRotationMatrix2D(center, rotationAngle, scale);
+    warpAffine(sourceImage, rotatedImage, M, size);
+}
+
+void ImageOperations::GetResizedImage(cv::Mat &resizedImage, double scaleX, double scaleY) {
+    resize(sourceImage, resizedImage, Size(), scaleX, scaleY, INTER_LINEAR);
+}
+
+void ImageOperations::GetCropedImage(cv::Mat &cropedImage, cv::Range y, cv::Range x) {
+    cropedImage = sourceImage(y, x);
+}
