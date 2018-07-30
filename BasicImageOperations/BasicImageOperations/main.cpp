@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     ImageOperations imageOperations;
     
     //Load image
-    const string imageName = "/Users/hikalif/Downloads/day-1-basic-operations/sample.jpg";
+    const string imageName = "./sample.jpg";
     if(!imageOperations.LoadImage(imageName)) {
         return -1;
     }
@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     Mat sourceImage = imageOperations.GetSourceImage();
     
     //Show sourceImage
-//    imageOperations.ShowImage("image", sourceImage);
+    imageOperations.ShowImage("image", sourceImage);
     
     //Save image to file
 //    imageOperations.SaveImage("/Users/hikalif/Downloads/image.jpg", sourceImage);
